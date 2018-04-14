@@ -1,6 +1,6 @@
 package main
 
-// #cgo LDFLAGS: -lfoo
+// #cgo darwin LDFLAGS: -lMyLib -L${SRCDIR} -lfoo
 // #include "foo.h"
 import "C"
 
@@ -8,6 +8,10 @@ type GoFoo struct {
 	foo C.Foo
 }
 
+//export add
+func add() *C.char {
+	return C.CString("hello")
+}
 func New() GoFoo {
 	var ret GoFoo
 	ret.foo = C.FooInit()
@@ -21,7 +25,7 @@ func (f GoFoo) Bar() {
 }
 
 func main() {
-	foo := New()
-	foo.Bar()
-	foo.Free()
+	//foo := New()
+	//foo.Bar()
+	//foo.Free()
 }

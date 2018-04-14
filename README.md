@@ -1,7 +1,13 @@
-# Wrapping C++ with Go
+# Wrapping C++ with Go and Py using share libaray
 
-This is a minimal example of how to wrap a C++ class manually with Go.
+I reference [this sample code](https://github.com/burke/howto-go-with-cpp)
 
-I borrowed most of the code from [a stack overflow answer](http://stackoverflow.com/questions/1713214/how-to-use-c-in-go),
-but modified it to use static linking.
+build
+```
+make
+```
+
+The __Go__ file depenecy ```g++``` build share library ```libfoo.so```
+<br>
+and __Py__ file depency ```go``` build share library ```libgoo.so```
 

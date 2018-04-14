@@ -1,6 +1,7 @@
 #include "foo.hpp"
 #include "foo.h"
 
+using namespace rozen;
 Foo FooInit() {
 	cxxFoo * ret = new cxxFoo(1);
 	return (void*)ret;
